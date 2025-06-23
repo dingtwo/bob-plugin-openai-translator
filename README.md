@@ -1,3 +1,5 @@
+对 [bob-plugin-openai-translator](https://github.com/openai-translator/bob-plugin-openai-translator) 做了修改，兼容之前的开源版本。当然流式响应用不了。
+
 <h4 align="right">
   <strong>简体中文</strong> | <a href="https://github.com/openai-translator/bob-plugin-openai-translator/blob/main/docs/README_EN.md">English</a>
 </h4>

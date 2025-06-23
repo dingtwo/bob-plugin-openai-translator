@@ -7,8 +7,8 @@ import type {
 } from "@bob-translate/types";
 import {
   getApiKey,
-  handleGeneralError,
   handleValidateError,
+  convertToServiceError,
 } from "./utils";
 import { getServiceAdapter } from "./adapter";
 import { ensureHttpsAndNoTrailingSlash } from "./utils";
@@ -61,7 +61,12 @@ const validatePluginConfig = (): ServiceError | null => {
   return null;
 }
 
-export const translate: TextTranslate = (query) => {
+/**
+ * 翻译函数 - 使用旧版本的completion API回调
+ * @param query 翻译查询对象
+ * @param completion 回调函数，用于返回翻译结果
+ */
+export const translate: TextTranslate = (query, completion) => {
   const {
     apiKeys,
     apiUrl,
@@ -74,17 +79,26 @@ export const translate: TextTranslate = (query) => {
 
   const error = validatePluginConfig();
   if (error) {
-    handleGeneralError(query, error);
+    // 使用旧版本completion API回调错误
+    completion({ error });
     return;
   }
 
+  // 创建一个修改过的query对象，将onCompletion替换为传入的completion
+  const modifiedQuery = {
+    ...query,
+    onCompletion: completion
+  };
+
   serviceAdapter.translate(
-    query,
+    modifiedQuery,
     apiKey,
     ensureHttpsAndNoTrailingSlash(apiUrl),
     stream === "enable"
   ).catch((error: unknown) => {
-    handleGeneralError(query, error);
+    // 使用旧版本completion API回调错误
+    const serviceError = convertToServiceError(error);
+    completion({ error: serviceError });
   });
 }
 

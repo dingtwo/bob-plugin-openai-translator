@@ -4,6 +4,7 @@
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
+    "lib": ["ESNext"],
     "moduleResolution": "Bundler",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,

@@ -13,8 +13,8 @@ def update_appcast(version, desc):
         'version': version,
         'desc': desc,
         'sha256': file_hash,
-        'url': f'https://github.com/openai-translator/bob-plugin-openai-translator/releases/download/v{version}/{release_file.name}',
-        'minBobVersion': '1.8.0'
+        'url': f'https://github.com/dingtwo/bob-plugin-openai-translator/releases/download/v{version}/{release_file.name}',
+        'minBobVersion': '0.10.0'
     }
     appcast_file = Path('appcast.json')
     if appcast_file.is_file():

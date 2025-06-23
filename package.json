@@ -10,7 +10,7 @@
     "openai",
     "translator"
   ],
-  "homepage": "https://github.com/openai-translator/bob-plugin-openai-translator",
+  "homepage": "https://github.com/dingtwo/bob-plugin-openai-translator",
   "scripts": {
     "build": "rollup --config rollup.config.ts --configPlugin typescript"
   },

@@ -1,11 +1,11 @@
 {
-  "appcast": "https://raw.githubusercontent.com/openai-translator/bob-plugin-openai-translator/main/appcast.json",
+  "appcast": "https://raw.githubusercontent.com/dingtwo/bob-plugin-openai-translator/main/appcast.json",
   "author": "yetone <yetoneful@gmail.com>",
   "category": "translate",
-  "homepage": "https://github.com/openai-translator/bob-plugin-openai-translator",
+  "homepage": "https://github.com/dingtwo/bob-plugin-openai-translator",
   "icon": "",
   "identifier": "yetone.openai.translator",
-  "minBobVersion": "1.8.0",
+  "minBobVersion": "0.10.0",
   "name": "OpenAI Translator",
   "options": [
     {
@@ -167,5 +167,5 @@
     }
   ],
   "summary": "AI powered translator",
-  "version": "3.3.2"
+  "version": "1.0"
 }
