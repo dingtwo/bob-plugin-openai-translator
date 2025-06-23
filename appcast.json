@@ -1,5 +1,12 @@
 {
   "identifier": "yetone.openai.translator",
   "versions": [
+    {
+      "version": "1.0.0",
+      "desc": "降级支持0.10版本bob",
+      "sha256": "4d4224686276de88325e7ac7a7291fa752684276f01fe4721adffb11ac57615f",
+      "url": "https://github.com/dingtwo/bob-plugin-openai-translator/releases/download/v1.0.0/openai-translator-1.0.0.bobplugin",
+      "minBobVersion": "0.10.0"
+    }
   ]
 }
